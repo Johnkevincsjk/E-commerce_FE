@@ -1,0 +1,53 @@
+.nav-main {
+    background-color: gold;
+
+}
+
+.nav-head {
+    letter-spacing: 2px;
+    font-size: 30px;
+    font-family: "New Amsterdam", sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.nav-btns {
+    text-transform: capitalize;
+    color: black;
+    font-weight: 500;
+}
+
+.nav-btns:hover {
+
+    border-bottom: 2px solid red;
+}
+
+.nav-cart-btn {
+
+    margin-right: 20px;
+
+    transition: 0.2s;
+}
+
+.nav-cart-btn:hover {
+    border-bottom: none;
+    transform: scale(1.1);
+}
+
+#nav-cart-btn {
+    font-size: 20px;
+}
+
+
+@media screen and (max-width:800px) {
+    .nav-cart-btn {
+        margin-left: 20px;
+
+    }
+
+    #nav-cart-btn {
+        font-size: 30px;
+    }
+
+    .nav-main1 {}
+}

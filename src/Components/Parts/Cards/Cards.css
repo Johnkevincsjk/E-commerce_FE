@@ -1,0 +1,55 @@
+.card {
+    margin: 20px 0px;
+    overflow: hidden;
+
+    img {
+        display: inline-block;
+        height: 300px;
+
+        object-fit: cover;
+
+    }
+}
+
+.image-card {
+    height: 300px;
+    overflow: hidden;
+}
+
+.cards-body {
+
+
+
+    p {
+        font-weight: 400;
+        font-size: smaller;
+    }
+
+    h6 {
+        margin-top: 5px;
+    }
+
+    button {
+        margin: 10px;
+
+
+    }
+}
+
+.cards-title {
+    text-transform: capitalize;
+    font-weight: 800;
+}
+
+.buy-btn {
+    font-weight: 600;
+}
+
+.image-size {
+    transition: 0.2s;
+}
+
+.image-size:hover {
+    transform: scale(1.1);
+
+}

@@ -1,0 +1,41 @@
+.cart-main2 {
+    min-height: 71vh;
+    place-content: center;
+}
+
+#empty-cart {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 70px;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.174);
+    letter-spacing: 5px;
+}
+
+.card-main3 {
+    height: auto;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.cart-cards {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border: 1px solid rgba(0, 0, 0, 0.415);
+    border-radius: 5px;
+
+}
+
+.image-div {
+    place-content: center;
+}
+
+.cart-img {
+    object-position: center;
+    object-fit: contain;
+}
+
+.cart-pricetag {
+    font-weight: 900;
+    font-size: larger;
+}

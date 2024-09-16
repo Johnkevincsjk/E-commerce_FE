@@ -1,0 +1,29 @@
+.counter {
+
+    margin: 10px;
+
+
+}
+
+.counter>button {
+    padding: 0;
+    height: 30px;
+    width: 30px;
+    place-content: center;
+
+}
+
+#star_rate {
+    padding-bottom: 6px;
+    color: gold;
+}
+
+
+.show_count {
+
+
+    margin: 5px;
+
+    padding: 5px;
+    border-radius: 5px;
+}

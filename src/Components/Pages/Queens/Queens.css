@@ -1,0 +1,54 @@
+.banner-main {
+    height: auto;
+
+}
+
+.banner-img-queen {
+    place-content: center;
+    text-align: start;
+    padding-left: 20px;
+    line-height: 90px;
+    min-height: 60vh;
+    width: 100%;
+    background-image: url("https://as1.ftcdn.net/v2/jpg/06/36/44/26/1000_F_636442646_II8z4yhYbPoea8P6HoimUblo6ZQXzUXY.jpg");
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-image: fill 0 linear-gradient(#0003, #000);
+
+    header {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 70px;
+        text-transform: uppercase;
+        color: white;
+        letter-spacing: 5px;
+    }
+
+    h5 {
+        font-family: "New Amsterdam", sans-serif;
+        font-size: 40px;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        color: white;
+        text-decoration: underline;
+    }
+
+    span {
+        font-family: "New Amsterdam", sans-serif;
+        font-size: 100px;
+        color: gold;
+        letter-spacing: 3px;
+    }
+}
+
+.btn-ui {
+    font-family: "Bebas Neue", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.queens-main{
+    height: auto;
+    margin-bottom:30px;
+
+}
