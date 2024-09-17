@@ -8,12 +8,37 @@ import Carts from './Components/Pages/CartsPage/Carts.jsx';
 import { Provider } from 'react-redux'
 import store from './redux/Store.js';
 import Single_product from './Components/Pages/Single_product/Single_product.jsx';
-import { ToastContainer, toast, Bounce } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useEffect } from 'react';
+import axios from 'axios';
+import Login from './Components/Pages/LoginPage/Login.jsx';
+import Signin from './Components/Pages/SigninPage/Signin.jsx';
 
 function App() {
-  
+
+  // useEffect(() => {
+
+  //   const Login_data = async () => {
+  //     try {
+  //       const auth_data = await axios.get("http://localhost:8000/auth/Login")
+  //       console.log(auth_data.data)
+
+  //     } catch (error) {
+  //       console.log(error)
+  //     }
+
+
+  //   }
+
+
+  //   Login_data()
+
+  // }, [])
+
   return (
+
+
 
     <Provider store={store}>
 
@@ -22,17 +47,19 @@ function App() {
         <section>
 
           <Routes>
-            <Route path='/' Component={HomePage} />
-            <Route path='/search' Component={HomePage} />
-            <Route path='/Queens' Component={Queens} />
-            <Route path='/Kids' Component={Prince} />
-            <Route path='/AddCart' Component={Carts} />
+            <Route path='/' element={<HomePage />} />
+            <Route path='/Login' element={<Login />} />
+            <Route path='/Signin' element={<Signin />} />
+            <Route path='/search' element={<HomePage />} />
+            <Route path='/Queens' element={<Queens />} />
+            <Route path='/Kids' element={<Prince />} />
+            <Route path='/AddCart' element={<Carts />} />
             <Route path='/product/:id' element={<Single_product />} />
           </Routes>
 
 
         </section>
-       
+
       </div>
       <ToastContainer />
     </Provider>

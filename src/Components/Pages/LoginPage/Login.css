@@ -1,0 +1,31 @@
+.Login_form_main {
+
+    min-height: 100dvh;
+
+}
+
+.Login_row {
+    height: 100dvh;
+
+}
+
+.Login_form {
+
+    background: rgba(251, 251, 251, 0.649);
+    border-radius: 10px;
+
+    place-content: center;
+    padding: 20px 20px;
+}
+
+.Login_form2 {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+#login_ani {
+    height: 300px;
+}
