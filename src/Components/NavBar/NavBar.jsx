@@ -4,10 +4,12 @@ import { PiShoppingCartFill } from "react-icons/pi"
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import SearchBox from '../Parts/SearchBox/SearchBox'
-import axios from 'axios'
-
 export default function NavBar() {
     const NoOfCarts = useSelector((state) => state.cart)
+
+    const isLogged = useSelector((state) => state.Auth.isLoggedin)
+
+    console.log(isLogged)
 
 
 
@@ -43,7 +45,7 @@ export default function NavBar() {
                             </li>
 
                             <li className="nav-item">
-                                <Link to={'/Login'} className="nav-link nav-btns" >Log-out</Link>
+                                <Link to={'/Login'} className="nav-link nav-btns bg-dark rounded text-white" >{isLogged === true ? "LOGOUT" : "LOGIN"}</Link>
                             </li>
                             <Link to={'/AddCart'} className="nav-link nav-btns nav-cart-btn" aria-disabled="true"><PiShoppingCartFill id='nav-cart-btn' /><small>{NoOfCarts.length}</small></Link>
 
