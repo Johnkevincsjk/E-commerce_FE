@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 
 const initialState = {
-    isLoggedin: false,
+    isLoggedin: null,
     userdata: null
 }
 const Auth_slice = createSlice({
@@ -10,8 +10,8 @@ const Auth_slice = createSlice({
     initialState,
     reducers: {
         setisLoggedin: (state, actions) => {
-            state.isLoggedin = actions.payload.isLoggedin;
-            state.userdata = actions.payload.isLoggedin;
+            state.isLoggedin = actions.payload;
+
         }
     }
 })

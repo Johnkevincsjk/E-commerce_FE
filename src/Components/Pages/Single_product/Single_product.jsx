@@ -2,37 +2,57 @@ import React, { useEffect, useState } from 'react'
 import NavBar from '../../NavBar/NavBar'
 import Footer from '../../Parts/Footer/Footer'
 import axios from 'axios'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import '../Single_product/Single_product.css'
 import { FaStar } from "react-icons/fa";
 import { addTocart } from '../../../redux/CartSlice'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { toast } from 'react-toastify'
 import { FaShoppingCart, FaTags } from 'react-icons/fa'
+import { Dialog, DialogActions, DialogContent, DialogTitle } from '@mui/material'
 
 
-export default function Single_product(props) {
+
+export default function Single_product() {
+    const [dialog_open, setdialog_open] = useState(false)
+
+    const tog_dialog = () => {
+        setdialog_open(true)
+    }
+
+
+    const navi = useNavigate()
     const [count, setCount] = useState(1)
     const [view_pro, setView_pro] = useState({})
     const { id } = useParams()
     const dispatch = useDispatch(null)
     const [isactiveCart, setIsactiveCart] = useState(false)
+    const is_loggedin = useSelector((state) => state.Auth.isLoggedin)
 
     //Redux dispatch below
     const handleAddToCart = () => {
-        dispatch(addTocart({
-            img: view_pro.img,
-            title: view_pro.title,
-            price: view_pro.price,
-            off: view_pro.off,
-            qtn: count,
-            tot_amt: add_amount
 
-        }));
-        if (!isactiveCart) {
-            setIsactiveCart(true);
-            toast.success('Added to cart.');
+        if (is_loggedin) {
+            dispatch(addTocart({
+                img: view_pro.img,
+                title: view_pro.title,
+                price: view_pro.price,
+                off: view_pro.off,
+                qtn: count,
+                tot_amt: add_amount
+
+            }));
+            if (!isactiveCart) {
+                setIsactiveCart(true);
+                toast.success('Added to cart.');
+            }
+        } else {
+            tog_dialog()
+
+
         }
+
+
     };
 
 
@@ -68,6 +88,23 @@ export default function Single_product(props) {
             <NavBar />
 
             <div className='container-fluid vh-100'>
+                {!is_loggedin ? <Dialog open={dialog_open} onClose={() => setdialog_open(false)}>
+                    <DialogTitle>
+                        Notice: Login Required
+                    </DialogTitle>
+                    <DialogContent>
+                        <p>You are not logged in. Please log in to continue shopping and enjoy a personalized experience. Logging in allows you to add items to your cart and proceed with your purchase smoothly.</p>
+                    </DialogContent>
+                    <DialogActions>
+                        <button className='btn btn-danger' onClick={() => {
+                            setdialog_open(false)
+                            navi('/Login')
+
+
+                        }}>Close</button>
+                    </DialogActions>
+
+                </Dialog> : null}
 
                 <div className="row  py-5 ">
 
@@ -92,7 +129,7 @@ export default function Single_product(props) {
                             <h6 className='show_count'>{count}</h6>
                             <button onClick={decreaseCount} className='btn btn-danger'>-</button>
                         </div>
-                        <button className='btn btn-success'>Buy now</button>
+                        <button className='btn btn-success'>Place Order</button>
                         <button onClick={handleAddToCart} disabled={isactiveCart} className='btn btn-warning buy-btn m-2'>Add to Cart <span className='add-cart-fa'><FaShoppingCart /></span></button>
                     </div>
                 </div>

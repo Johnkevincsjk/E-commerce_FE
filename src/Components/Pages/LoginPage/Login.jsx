@@ -7,9 +7,12 @@ import { useFormik } from 'formik'
 import Login_val from './Login_val'
 import axios from 'axios'
 import { toast } from 'react-toastify'
+import { useDispatch } from 'react-redux'
+import { setisLoggedin } from '../../../redux/AuthSlice'
 
 export default function Login() {
     const navi = useNavigate()
+    const auth_dispatch = useDispatch()
 
     const { values, errors, handleBlur, handleSubmit, touched, handleChange } = useFormik({
         initialValues: {
@@ -21,14 +24,14 @@ export default function Login() {
 
             try {
                 const Login_data = await axios.post(`${process.env.REACT_APP_Auth}/Login`, values)
-
+                auth_dispatch(setisLoggedin(Login_data.data.success))
                 if (Login_data.data.success === true) {
                     toast.success('Login successfully')
                     navi('/')
 
                 }
 
-                console.log(Login_data)
+
 
             } catch (error) {
                 toast.error('Invaid userid or password')
