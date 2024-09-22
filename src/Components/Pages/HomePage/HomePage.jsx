@@ -29,7 +29,7 @@ export default function HomePage() {
 
                 setHome_products(Home_page_Items)
                 setTop_Home_products(Top_products)
-                console.log(all_home_products[0]._id);
+              
 
             } catch (error) {
                 console.log(error);
