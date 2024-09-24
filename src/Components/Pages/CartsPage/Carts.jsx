@@ -5,18 +5,22 @@ import '../CartsPage/Carts.css'
 import { PiShoppingCartFill } from 'react-icons/pi'
 import { useDispatch, useSelector } from 'react-redux'
 import { removeFromCart } from '../../../redux/CartSlice'
+import { useNavigate } from 'react-router-dom'
 
 
 
 export default function () {
-
+    const navi = useNavigate()
     const dispatch = useDispatch()
     const display_cart = useSelector((state) => state.cart)
 
     function removeCart(index) {
         dispatch(removeFromCart(index))
     }
+    const handleorder = () => {
+        navi('/confirmdetails')
 
+    }
 
 
     return (
@@ -53,7 +57,7 @@ export default function () {
                                                 </h6>
                                                 <p className="card-text cart-pricetag">{`Rs. ${items.tot_amt}`} <span>{items.off}</span></p>
                                                 <p className='fs-4'>{`Qty: ${items.qtn}`}</p>
-                                                <button className='btn btn-primary buy-btn'>Place Order</button>
+                                                <button onClick={handleorder} className='btn btn-primary buy-btn'>Place Order</button>
                                                 <button className='btn btn-danger buy-btn' onClick={() => removeCart(index)}>Remove</button>
                                             </div>
                                         </div >
