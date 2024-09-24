@@ -1,0 +1,9 @@
+.userdetails_form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 100px;
+    background-color: rgb(245, 242, 180);
+    height: 90dvh;
+}

@@ -29,7 +29,7 @@ export default function HomePage() {
 
                 setHome_products(Home_page_Items)
                 setTop_Home_products(Top_products)
-              
+
 
             } catch (error) {
                 console.log(error);
@@ -55,7 +55,7 @@ export default function HomePage() {
                                 <Cards
                                     img={pro_data.img}
                                     title={pro_data.title}
-                                    price="Rs.249"
+                                    price={`Rs.${pro_data.price}`}
                                     off="(18% OFF)"
                                     id={pro_data._id}
 

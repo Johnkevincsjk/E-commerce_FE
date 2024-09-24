@@ -28,7 +28,13 @@ export default function Single_product() {
     const dispatch = useDispatch(null)
     const [isactiveCart, setIsactiveCart] = useState(false)
     const is_loggedin = useSelector((state) => state.Auth.isLoggedin)
-
+    const handleorder = () => {
+        if (is_loggedin) {
+            navi('/confirmdetails')
+        } else {
+            tog_dialog()
+        }
+    }
     //Redux dispatch below
     const handleAddToCart = () => {
 
@@ -129,7 +135,7 @@ export default function Single_product() {
                             <h6 className='show_count'>{count}</h6>
                             <button onClick={decreaseCount} className='btn btn-danger'>-</button>
                         </div>
-                        <button className='btn btn-success'>Place Order</button>
+                        <button className='btn btn-success' onClick={handleorder}>Place Order</button>
                         <button onClick={handleAddToCart} disabled={isactiveCart} className='btn btn-warning buy-btn m-2'>Add to Cart <span className='add-cart-fa'><FaShoppingCart /></span></button>
                     </div>
                 </div>

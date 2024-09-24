@@ -4,6 +4,7 @@ import { PiShoppingCartFill } from "react-icons/pi"
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import SearchBox from '../Parts/SearchBox/SearchBox'
+import { toast } from 'react-toastify'
 export default function NavBar() {
     const NoOfCarts = useSelector((state) => state.cart)
 
@@ -11,7 +12,11 @@ export default function NavBar() {
 
     console.log(isLogged)
 
-
+    const handleclick = () => {
+        toast.info("User has been logged out", {
+            position: "top-center"
+        })
+    }
 
     return (
         <div>
@@ -45,7 +50,7 @@ export default function NavBar() {
                             </li>
 
                             <li className="nav-item">
-                                <Link to={'/Login'} className="nav-link nav-btns bg-dark rounded text-white" >{isLogged === true ? "LOGOUT" : "LOGIN"}</Link>
+                                <Link to={'/Login'} onClick={isLogged === true ? handleclick : null} className="nav-link nav-btns bg-dark rounded text-white" >{isLogged === true ? "LOGOUT" : "LOGIN"}</Link>
                             </li>
                             <Link to={'/AddCart'} className="nav-link nav-btns nav-cart-btn" aria-disabled="true"><PiShoppingCartFill id='nav-cart-btn' /><small>{NoOfCarts.length}</small></Link>
 
