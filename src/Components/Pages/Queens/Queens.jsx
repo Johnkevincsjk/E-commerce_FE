@@ -13,7 +13,7 @@ export default function Queens() {
     useEffect(() => {
         const queens_product = async () => {
             try {
-                const resp = await axios.get(`${process.env.REACT_APP_PRODUCT_API}/products?${search_params}`)
+                const resp = await axios.get(`${process.env.REACT_APP_PRODUCT_API}/Kingswear/products?${search_params}`)
                 const all_home_products = resp.data.data
 
                 const queens_data = all_home_products.filter((res) => res.catagory === "Queens")
