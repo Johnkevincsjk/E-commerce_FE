@@ -20,7 +20,7 @@ export default function HomePage() {
 
         const Home_products = async () => {
             try {
-                const resp = await axios.get(`${process.env.REACT_APP_PRODUCT_API}/products?${search_params}`)
+                const resp = await axios.get(`${process.env.REACT_APP_PRODUCT_API}/Kingswear/products?${search_params}`)
 
 
                 const all_home_products = resp.data.data
