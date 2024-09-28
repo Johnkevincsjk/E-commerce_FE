@@ -22,6 +22,7 @@ export default function HomePage() {
             try {
                 const resp = await axios.get(`https://e-commerce-be-c8bw.onrender.com/Kingswear/products?${search_params}`)
 
+
                 const all_home_products = resp.data.data
 
                 const Home_page_Items = all_home_products.filter((res) => res.catagory === "Homepage")
