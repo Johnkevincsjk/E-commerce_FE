@@ -20,7 +20,7 @@ export default function HomePage() {
 
         const Home_products = async () => {
             try {
-                const resp = await axios.get(`https://e-commerce-be-c8bw.onrender.com//Kingswear/products?${search_params}`)
+                const resp = await axios.get(`https://e-commerce-be-c8bw.onrender.com/Kingswear/products?${search_params}`)
 
                 const all_home_products = resp.data.data
 
