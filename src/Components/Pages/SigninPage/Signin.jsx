@@ -20,7 +20,7 @@ export default function Signin() {
         onSubmit: async (values) => {
             try {
 
-                const user_data_signin = await axios.post(`${process.env.REACT_APP_Auth}/Signin`, values)
+                const user_data_signin = await axios.post(`${process.env.REACT_APP_Auth}/auth/Signin`, values)
 
                 if (user_data_signin.data.isSignin === true) {
                     toast.success('Acount created successfully')

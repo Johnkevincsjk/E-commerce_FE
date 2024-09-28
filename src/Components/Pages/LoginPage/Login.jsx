@@ -23,7 +23,7 @@ export default function Login() {
         onSubmit: async (values) => {
 
             try {
-                const Login_data = await axios.post(`${process.env.REACT_APP_Auth}/Login`, values)
+                const Login_data = await axios.post(`${process.env.REACT_APP_Auth}/auth/Login`, values)
                 auth_dispatch(setisLoggedin(Login_data.data.success))
                 if (Login_data.data.success === true) {
                     toast.success('Login successfully')

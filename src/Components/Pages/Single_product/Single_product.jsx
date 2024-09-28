@@ -65,7 +65,7 @@ export default function Single_product() {
     useEffect(() => {
         const ViewProducts = async () => {
             try {
-                axios.get(`${process.env.REACT_APP_PRODUCT_API}/product/${id}`).then((resp) => setView_pro(resp.data.one_data))
+                axios.get(`${process.env.REACT_APP_PRODUCT_API}/Kingswear/product/${id}`).then((resp) => setView_pro(resp.data.one_data))
 
 
             } catch (error) {
