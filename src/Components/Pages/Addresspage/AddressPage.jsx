@@ -26,7 +26,7 @@ export default function AdressPage() {
         onSubmit: async (values) => {
 
             try {
-                const update_data = await axios.post('http://localhost:8000/buy/buydetails', values)
+                const update_data = await axios.post(`${process.env.REACT_APP_PRODUCT_API}/buy/buydetails`, values)
 
                 console.log(update_data)
                 if (isLogin === true) {
