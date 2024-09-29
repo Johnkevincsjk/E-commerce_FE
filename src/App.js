@@ -12,6 +12,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Login from './Components/Pages/LoginPage/Login.jsx';
 import Signin from './Components/Pages/SigninPage/Signin.jsx';
 import AddressPage from './Components/Pages/Addresspage/AddressPage.jsx';
+import Payment from './Components/Pages/PaymentPage/Payment.jsx';
 
 function App() {
 
@@ -35,6 +36,7 @@ function App() {
           <Route path='/AddCart' element={<Carts />} />
           <Route path='/product/:id' element={<Single_product />} />
           <Route path='/confirmdetails' element={<AddressPage />} />
+          <Route path='/Payment' element={<Payment />} />
         </Routes>
 
 

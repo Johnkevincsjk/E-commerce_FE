@@ -1,0 +1,17 @@
+.payment-main {
+    height: 100dvh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.paymentform {
+    width: 60%;
+}
+
+.payment_body {
+    margin: 10px 20px;
+}
