@@ -39,13 +39,14 @@ export default function Single_product() {
     const handleAddToCart = () => {
 
         if (is_loggedin) {
+            const tot_amt = add_amount
             dispatch(addTocart({
                 img: view_pro.img,
                 title: view_pro.title,
                 price: view_pro.price,
                 off: view_pro.off,
                 qtn: count,
-                tot_amt: add_amount
+                tot_amt
 
             }));
             if (!isactiveCart) {

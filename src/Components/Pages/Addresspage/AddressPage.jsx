@@ -13,6 +13,10 @@ export default function AdressPage() {
     const navi = useNavigate()
 
     const isLogin = useSelector((state) => state.Auth.isLoggedin)
+    const cartItems = useSelector((state) => state.cart);
+
+    // Calculate the total amount by summing up 'tot_amt' for each item in the cart
+    const totalAmount = cartItems.reduce((total, item) => total + item.tot_amt, 0);
 
     const { handleBlur, handleChange, handleSubmit, values, resetForm, touched, errors } = useFormik({
         initialValues: {
@@ -28,11 +32,11 @@ export default function AdressPage() {
             try {
                 const update_data = await axios.post(`${process.env.REACT_APP_PRODUCT_API}/buy/buydetails`, values)
 
-                console.log(update_data)
+
                 if (isLogin === true) {
                     if (update_data.data.success === true) {
-                        toast.success("Order placed successfully")
-                        navi('/')
+                        toast("Details saved")
+                        navi('/Payment')
                     }
                 } else {
                     toast.error('Something went wrong')
@@ -53,6 +57,7 @@ export default function AdressPage() {
             <NavBar />
             <div className='userdetails_form'>
                 <h3>Confirm Your details</h3>
+                <h6>Total Amount: Rs.{totalAmount}</h6>
                 <form onSubmit={handleSubmit} className='text-start w-100'>
 
 

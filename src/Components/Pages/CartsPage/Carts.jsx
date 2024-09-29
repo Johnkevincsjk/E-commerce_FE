@@ -41,7 +41,7 @@ export default function () {
                         display_cart.map((items, index) => {
                             console.log(items)
                             return (
-                                <div className="">
+                                <div>
 
                                     <div className='col-12 m-1'>
 
