@@ -34,6 +34,7 @@ export default function AdressPage() {
 
 
                 if (isLogin === true) {
+                    console.log("islogged world")
                     if (update_data.data.success === true) {
                         toast("Details saved")
                         navi('/Payment')

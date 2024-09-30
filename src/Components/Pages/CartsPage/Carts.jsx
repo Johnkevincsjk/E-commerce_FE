@@ -6,6 +6,7 @@ import { PiShoppingCartFill } from 'react-icons/pi'
 import { useDispatch, useSelector } from 'react-redux'
 import { removeFromCart } from '../../../redux/CartSlice'
 import { useNavigate } from 'react-router-dom'
+import { FaTruck } from "react-icons/fa";
 
 
 
@@ -26,6 +27,7 @@ export default function () {
     return (
         <div className='container-fluid p-0 cart-main'>
             <NavBar />
+            <button onClick={handleorder} className='btn btn-primary buy-btn m-3'>Place Order <FaTruck className='place_order_icon' /></button>
             {display_cart.length == 0 ? (
                 <div>
                     <div className="container-fluid cart-main2">
@@ -57,7 +59,7 @@ export default function () {
                                                 </h6>
                                                 <p className="card-text cart-pricetag">{`Rs. ${items.tot_amt}`} <span>{items.off}</span></p>
                                                 <p className='fs-4'>{`Qty: ${items.qtn}`}</p>
-                                                <button onClick={handleorder} className='btn btn-primary buy-btn'>Place Order</button>
+
                                                 <button className='btn btn-danger buy-btn' onClick={() => removeCart(index)}>Remove</button>
                                             </div>
                                         </div >
@@ -70,7 +72,7 @@ export default function () {
                 </div>)
 
             }
-
+            <button onClick={handleorder} className='btn btn-primary buy-btn m-3'>Place Order <FaTruck className='place_order_icon' /></button>
             <Footer />
         </div>
     )
