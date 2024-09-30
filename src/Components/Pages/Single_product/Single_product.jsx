@@ -30,6 +30,16 @@ export default function Single_product() {
     const is_loggedin = useSelector((state) => state.Auth.isLoggedin)
     const handleorder = () => {
         if (is_loggedin) {
+            const tot_amt = add_amount
+            dispatch(addTocart({
+                img: view_pro.img,
+                title: view_pro.title,
+                price: view_pro.price,
+                off: view_pro.off,
+                qtn: count,
+                tot_amt
+
+            }));
             navi('/confirmdetails')
         } else {
             tog_dialog()
