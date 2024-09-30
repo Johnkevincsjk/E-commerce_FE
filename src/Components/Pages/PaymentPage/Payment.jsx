@@ -2,9 +2,11 @@ import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { toast } from 'react-toastify'
 import '../PaymentPage/Payment.css'
-import { color } from 'framer-motion'
+import { useNavigate } from 'react-router-dom'
+
 
 export default function Payment() {
+    const navi = useNavigate()
 
     const [payment, setPayment] = useState("")
     const total_items = useSelector((state) => state.cart)
@@ -18,7 +20,7 @@ export default function Payment() {
 
         } else {
             var option = {
-                key: '',
+                key: 'rzp_test_tKLoJePvdHQVVV',
                 key_secret: '',
                 amount: payment * 100,
                 currency: "INR",
@@ -42,7 +44,7 @@ export default function Payment() {
             };
             const pay_ini = new window.Razorpay(option)
             pay_ini.open()
-
+            navi('/')
         }
 
     }
